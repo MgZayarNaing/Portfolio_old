@@ -1,7 +1,9 @@
 from django.urls import path 
-from myapp.views import *
+from myapp.views import  HeroSection
 
 urlpatterns = [
-     path('home/', home),
+     # path('home/', Resume),
+     path('home/', HeroSection),
+
 
 ]
