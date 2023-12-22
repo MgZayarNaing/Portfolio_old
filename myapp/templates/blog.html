@@ -1,5 +1,9 @@
-{% load static %}
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
 
+
+{% block body %}
+{% load static %}
 <!---BLOG-->
 
 <section class="section blog" id="blog">
@@ -44,3 +48,4 @@
     </div>
 
 </section>
+{% endblock %}

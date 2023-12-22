@@ -10,9 +10,9 @@ def HeroSection(request):
 # AboutSection
 def AboutSection(request):
     about = About.objects.all()
-    return render(request, 'index.html', {'about':about})
+    return render(request, 'about.html', {'about':about})
 
 # BlogSection
 def BlogSection(request):
     blog = Blog.objects.all()
-    return render(request, 'index.html', {'blog':blog})
+    return render(request, 'blog.html', {'blog':blog})

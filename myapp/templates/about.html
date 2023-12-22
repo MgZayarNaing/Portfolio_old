@@ -1,7 +1,9 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+
+
+{% block body %}
 {% load static %}
-
-
-
 <section class="section about" id="about">
     {% for p in about %}
     <div class="container">
@@ -43,3 +45,5 @@
     </div>
     {% endfor %}
 </section>
+
+{% endblock %}
