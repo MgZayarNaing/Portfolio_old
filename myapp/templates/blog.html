@@ -1,10 +1,10 @@
 {% load static %}
 
-<!-- 
-        - #BLOG
-      -->
+<!---BLOG-->
 
 <section class="section blog" id="blog">
+
+
     <div class="container">
 
         <p class="section-subtitle">Latest News</p>
@@ -15,66 +15,32 @@
             Dliquip ex ea commo do conse namber onequa ute irure dolor in reprehen derit in voluptate
         </p>
 
-        <ul class="blog-list">
-
-            <li>
-                <div class="blog-card">
-
-                    <figure class="card-banner">
-                        <a href="#">
-                            <img src="{% static 'images/blog-1.jpg'%}" width="1181" height="843" loading="lazy"
-                                alt="Jim Morisson Says when the musics over turn off the light" class="img-cover">
-                        </a>
-                    </figure>
-
-                    <a href="#" class="card-tag">Web Development</a>
-
-                    <h3 class="card-title">
-                        <a href="#">Jim Morisson Says when the musics over turn off the light</a>
-                    </h3>
+        <div class="card">
+            {% for p in blog %}
+            <div class="card-hover">
+                <div class="card-hover__content">
+                    <div class="title">
+                        <h4 class="card-hover__title">{{p.title}}</h4>
+                    </div>
+                    <div class="text">
+                        <p class="card-hover__text">{{p.contact}}</p>
+                    </div>
+                    <a href="#" class="card-hover__link">
+                        <span>Learn How</span>
+                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="card-hover__extra">
 
                 </div>
-            </li>
+                <img src="{{p.img.url}}" alt="">
+            </div>
+            {% endfor %}
 
-            <li>
-                <div class="blog-card">
-
-                    <figure class="card-banner">
-                        <a href="#">
-                            <img src="{% static 'images/blog-2.jpg'%}" width="1181" height="843" loading="lazy"
-                                alt="Jim Morisson Says when the musics over turn off the light" class="img-cover">
-                        </a>
-                    </figure>
-
-                    <a href="#" class="card-tag">Web Development</a>
-
-                    <h3 class="card-title">
-                        <a href="#">Jim Morisson Says when the musics over turn off the light</a>
-                    </h3>
-
-                </div>
-            </li>
-
-            <li>
-                <div class="blog-card">
-
-                    <figure class="card-banner">
-                        <a href="#">
-                            <img src="{% static 'images/blog-3.jpg'%}" width="1181" height="843" loading="lazy"
-                                alt="Jim Morisson Says when the musics over turn off the light" class="img-cover">
-                        </a>
-                    </figure>
-
-                    <a href="#" class="card-tag">Web Development</a>
-
-                    <h3 class="card-title">
-                        <a href="#">Jim Morisson Says when the musics over turn off the light</a>
-                    </h3>
-
-                </div>
-            </li>
-
-        </ul>
-
+        </div>
     </div>
+
 </section>
