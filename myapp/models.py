@@ -40,3 +40,13 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.title
+    
+# Skill
+class Skill(models.Model):
+    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=255, null=True, blank=True)
+    progress = models.IntegerField(default=0)
+    created_at = models.DateTimeField(default=datetime.now)
+
+    def __str__(self):
+        return self.name

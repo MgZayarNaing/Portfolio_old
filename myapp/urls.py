@@ -1,11 +1,11 @@
 from django.urls import path 
-from myapp.views import  HeroSection,AboutSection,BlogSection
+from myapp.views import  HeroSection,BlogSection,SkillSection
 
 urlpatterns = [
      # path('home/', Resume),
      path('home/', HeroSection),
-     path('about/', AboutSection),
-     path('blog/', BlogSection),
 
+     path('blog/', BlogSection),
+     path('skill/', SkillSection),
 
 ]
