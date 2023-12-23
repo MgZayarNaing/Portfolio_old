@@ -41,49 +41,202 @@
         <section class="section about" id="about">
             {% for p in about %}
             <div class="container">
-        
+
                 <figure class="about-banner">
-        
+
                     <img src="{{p.first.url}}" width="800" height="652" loading="lazy" alt="Zayar Naing's Photo"
                         class="img-cover">
-        
+
                     <img src="{{p.second.url}}" width="800" height="717" loading="lazy" alt="Zayar Naing's Photo"
                         class="abs-img">
-        
+
                     <div class="abs-icon abs-icon-1">
                         <ion-icon name="logo-css3"></ion-icon>
                     </div>
-        
+
                     <div class="abs-icon abs-icon-2">
                         <ion-icon name="logo-javascript"></ion-icon>
                     </div>
-        
+
                     <div class="abs-icon abs-icon-3">
                         <ion-icon name="logo-angular"></ion-icon>
                     </div>
-        
+
                 </figure>
-        
+
                 <div class="about-content">
-        
+
                     <p class="section-subtitle">I'm a Developer</p>
-        
+
                     <h2 class="h2 section-title">{{p.title}}</h2>
-        
+
                     <p class="section-text">{{p.contact}}</p>
-        
+
                     <a href="#portfolio" class="btn btn-primary blue">View Portfolio</a>
-        
+
                 </div>
-        
+
             </div>
             {% endfor %}
         </section>
 
+        <section class="section skills" id="skills">
+            <div class="container">
+
+                <p class="section-subtitle">My Skills</p>
+
+                <h2 class="h2 section-title">I Develop Skills Regularly</h2>
+
+                <p class="section-text">
+                    Dliquip ex ea commo do conse namber onequa ute irure dolor in reprehen derit in voluptate
+                </p>
+
+                <ul class="skills-list">
+                    {% for p in skill %}
+                    <li class="skills-item">
+                        <div class="wrapper" style="width: 95%">
+                            <h3 class=" skills-title">{{p.name}}</h3>
+
+                            <data class="skills-data" value="{{p.skill}}">{{p.skill}}%</data>
+                        </div>
+
+                        <div class="skills-progress-box">
+                            <div class="skills-progress" style="width: {{p.skill}}%"></div>
+                        </div>
+                    </li>
+
+                    {% endfor %}
+
+                </ul>
+
+            </div>
+        </section>
+
         {% include 'project.html' %}
-        {% include 'skill.html' %}
-        {% include 'contact.html' %}
-        {% include 'blog.html' %}
+        <section class="section blog" id="blog">
+
+
+            <div class="container">
+
+                <p class="section-subtitle">Latest News</p>
+
+                <h2 class="h2 section-title">Checkout My Recent Blogs</h2>
+
+                <p class="section-text">
+                    Dliquip ex ea commo do conse namber onequa ute irure dolor in reprehen derit in voluptate
+                </p>
+
+                <div class="card">
+                    {% for p in blog %}
+                    <div class="card-hover">
+                        <div class="card-hover__content">
+                            <div class="title">
+                                <h4 class="card-hover__title">{{p.title}}</h4>
+                            </div>
+                            <div class="text">
+                                <p class="card-hover__text">{{p.contact}}</p>
+                            </div>
+                            <a href="#" class="card-hover__link">
+                                <span>Read More</span>
+                                <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="card-hover__extra">
+
+                        </div>
+                        <img src="{{p.img.url}}" alt="">
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- contact Section -->
+        <section class="section contact" id="contact">
+            <div class="container">
+
+                <div class="contact-card">
+
+                    <p class="card-subtitle">Don't be shy</p>
+
+                    <h2 class="h2 section-title">Drop Me a Line</h2>
+
+                    <div class="wrapper">
+
+                        <form action="" class="contact-form">
+
+                            <input type="text" name="name" placeholder="Name" required class="contact-input">
+
+                            <input type="email" name="email" placeholder="Email" required class="contact-input">
+
+                            <textarea name="message" placeholder="Message" required class="contact-input"></textarea>
+
+                            <button type="submit" class="btn-submit">Submit Message</button>
+
+                        </form>
+
+                        <ul class="contact-list">
+
+                            <li class="contact-item">
+
+                                <div class="contact-icon">
+                                    <ion-icon name="location"></ion-icon>
+                                </div>
+
+                                <div>
+                                    <h3 class="contact-item-title">Address</h3>
+
+                                    <address class="contact-item-link">
+                                        20, London, United Kingdom
+                                    </address>
+                                </div>
+
+                            </li>
+
+                            <li class="contact-item">
+
+                                <div class="contact-icon">
+                                    <ion-icon name="mail"></ion-icon>
+                                </div>
+
+                                <div>
+                                    <h3 class="contact-item-title">Email</h3>
+
+                                    <a href="mailto:hello@ethan.com" class="contact-item-link">hello@ethan.com</a>
+                                </div>
+
+                            </li>
+
+                            <li class="contact-item">
+
+                                <div class="contact-icon">
+                                    <ion-icon name="call"></ion-icon>
+                                </div>
+
+                                <div>
+                                    <h3 class="contact-item-title">Phone</h3>
+
+                                    <a href="tel:+1234567890" class="contact-item-link">+123 456 7890</a>
+                                </div>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+
 
     </article>
 </main>
