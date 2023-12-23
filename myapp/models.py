@@ -13,7 +13,7 @@ class Hero(models.Model):
     img = models.ImageField(default=None)
     name = models.CharField(max_length=255, null=True, blank=True)
     title = models.CharField(max_length=255, null=True, blank=True)
-    contact = models.CharField(max_length=255, null=True, blank=True)
+    contact = models.TextField()
     created_at = models.DateTimeField(default=datetime.now)
 
     def __str__(self):

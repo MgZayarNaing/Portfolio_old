@@ -330,7 +330,7 @@ body {
 }
 
 .hero {
-  background-image: url("../images/hero-bg.jpg");
+  background-image: url("{% static 'images/hero-bg.jpg' %}");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -419,59 +419,88 @@ body {
   #PORTFOLIO
 \*-----------------------------------*/
 
-.portfolio .section-title {
-  margin-block-end: 18px;
-}
-
-.portfolio .section-text {
-  margin-block-end: 80px;
-}
-
-.portfolio-list {
-  display: grid;
-  gap: 60px;
-}
-
-.portfolio-card {
-  background-color: var(--independence);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  padding: 120px 20px;
-  border-radius: var(--radius-20);
-  font-family: var(--ff-barlow);
-  color: var(--white);
-  font-weight: var(--fw-600);
-  transition: var(--transition-2);
-}
-
-.portfolio-list > li:nth-child(even) .card-content {
-  margin-inline-start: auto;
-}
-
-.portfolio-card .card-subtitle {
-  color: var(--orange-soda);
-  margin-block-end: 5px;
-}
-
-.portfolio-card .card-title {
-  max-width: 20ch;
-  margin-block-end: 20px;
-}
-
-.portfolio-card .btn-link {
+.project {
   display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: var(--fs-6);
-  text-transform: uppercase;
 }
 
-.portfolio-card .btn-link ion-icon {
-  color: var(--orange-soda);
-  font-size: 1.6rem;
+.project_container {
+display: flex;
 }
 
+.pj_card {
+ margin-bottom: 30px;
+ border: 2px solid white;
+}
+
+.project_card {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.project_card_hover {
+  width: 475px;
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+  /* margin-bottom: 40px; */
+  box-shadow: 0 0 32px -10px rgba(255, 255, 255, 0.08);
+}
+
+
+.project_title {
+  font-size: 20px;
+  margin-bottom: 0.5em;
+  padding-top: 0.5em;
+  width: 300px;
+  height: 100px;
+  overflow: hidden;
+  
+  color: white;
+}
+
+
+.title {
+  height: 50px;
+  overflow: hidden;
+}
+
+
+.card-hover img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+  transform: scale(1.2);
+  transition: 0.35s 0.35s transform cubic-bezier(0.1, 0.72, 0.4, 0.97);
+}
+
+.project_btn {
+  display: flex;
+  width: 100%;
+  
+  justify-content: space-between;
+}
+
+.project_btn a {
+  width: 100px;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  align-content: center;
+  border-radius: 5px;
+  border: 2px solid white;
+  background-color: #fb523c;
+
+  margin: auto;
+}
 /*-----------------------------------*\
   #SKILLS
 \*-----------------------------------*/

@@ -1,95 +1,48 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+
+
+{% block body %}
 {% load static %}
+<!---BLOG-->
 
-<!-- 
-        - #PORTFOLIO
-      -->
+<section class="section blog" id="blog">
 
-<section class="section portfolio" id="portfolio">
-  <div class="container">
 
-    <p class="section-subtitle">Portfolio</p>
+    <div class="container">
 
-    <h2 class="h2 section-title">My Amazing Works</h2>
+        <p class="section-subtitle">Latest News</p>
 
-    <p class="section-text">
-      Dliquip ex ea commo do conse namber onequa ute irure dolor in reprehen derit in voluptate
-    </p>
+        <h2 class="h2 section-title">Checkout My Recent Blogs</h2>
 
-    <ul class="portfolio-list">
+        <p class="section-text">
+            Dliquip ex ea commo do conse namber onequa ute irure dolor in reprehen derit in voluptate
+        </p>
 
-      <li>
-        <a href="#" class="portfolio-card" style="background-image: url('./assets/images/portfolio-1.jpg')">
-          <div class="card-content">
+        <div class="project_container">
+            <div class="project">
+                <div class="project_card">
+                    {% for p in project %}
 
-            <p class="card-subtitle">Youtube</p>
+                    <div class="pj_card">
+                        <div class="project_card_hover">
+                            <img src="{{p.img.url}}" alt="">
+                        </div>
+                        <div class="project_title">
+                            <h4>{{p.name}}</h4>
+                        </div>
+                        <div class="project_btn">
+                            <a href="{{p.demo_link}}">Demo</a>
+                            <a href="{{p.github_link}}">Github</a>
+                        </div>
+                    </div>
 
-            <h3 class="h3 card-title">Web Application for Desiverse</h3>
+                    {% endfor %}
 
-            <span class="btn-link">
-              <span>View Project</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
-              <ion-icon name="arrow-forward"></ion-icon>
-            </span>
-
-          </div>
-        </a>
-      </li>
-
-      <li>
-        <a href="#" class="portfolio-card" style="background-image: url('./assets/images/portfolio-2.jpg')">
-          <div class="card-content">
-
-            <p class="card-subtitle">Vimeo</p>
-
-            <h3 class="h3 card-title">Web Application for Desiverse</h3>
-
-            <span class="btn-link">
-              <span>View Project</span>
-
-              <ion-icon name="arrow-forward"></ion-icon>
-            </span>
-
-          </div>
-        </a>
-      </li>
-
-      <li>
-        <a href="#" class="portfolio-card" style="background-image: url('./assets/images/portfolio-3.jpg')">
-          <div class="card-content">
-
-            <p class="card-subtitle">Soundcloud</p>
-
-            <h3 class="h3 card-title">Web Application for Desiverse</h3>
-
-            <span class="btn-link">
-              <span>View Project</span>
-
-              <ion-icon name="arrow-forward"></ion-icon>
-            </span>
-
-          </div>
-        </a>
-      </li>
-
-      <li>
-        <a href="#" class="portfolio-card" style="background-image: url('./assets/images/portfolio-4.jpg')">
-          <div class="card-content">
-
-            <p class="card-subtitle">Details</p>
-
-            <h3 class="h3 card-title">Web Application for Desiverse</h3>
-
-            <span class="btn-link">
-              <span>View Project</span>
-
-              <ion-icon name="arrow-forward"></ion-icon>
-            </span>
-
-          </div>
-        </a>
-      </li>
-
-    </ul>
-
-  </div>
 </section>
+{% endblock %}
