@@ -62,6 +62,16 @@ class Contact(models.Model):
     def __str__(self):
         return self.address
     
+class ContactMessage(models.Model):
+    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=200,default=None)    
+    email = models.EmailField()
+    message = models.TextField()
+    created_at = models.DateTimeField(default=datetime.now)
+
+    def __str__(self):
+        return self.name
+    
 
 class Project(models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)

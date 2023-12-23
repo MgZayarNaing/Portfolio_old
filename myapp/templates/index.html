@@ -136,7 +136,7 @@
                             <div class="text">
                                 <p class="card-hover__text">{{p.contact}}</p>
                             </div>
-                            <a href="#" class="card-hover__link">
+                            <a href="/app/blogdetail/{{p.uuid}}" class="card-hover__link">
                                 <span>Read More</span>
                                 <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -168,8 +168,8 @@
 
                     <div class="wrapper">
 
-                        <form action="" class="contact-form">
-
+                        <form action="" method="post" class="contact-form">
+                            {% csrf_token %}
                             <input type="text" name="name" placeholder="Name" required class="contact-input">
 
                             <input type="email" name="email" placeholder="Email" required class="contact-input">
